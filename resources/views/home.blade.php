@@ -59,7 +59,7 @@
                             <td>{{$user->email}}</td>
                             <td>
                                 <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">Edit</a>
-                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser{{$user->id}}">Delete</a>
+                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser{{$user->id}}"><i class='bx bx-trash'></i></a>
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal{{$user->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
