@@ -36,6 +36,22 @@ Route::post('/teacherEditSave/{id}', 'HomeController@teacherEditSave');
 Route::get('/teacherdelete/{id}', 'HomeController@teacherdelete');
 
 
+// 1-kishi
+
+
+
+
+
+// 2-kishi
+
+
+
+
+
+
+// 3-kishi
+
+
 
 
 

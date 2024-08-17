@@ -65,7 +65,7 @@
                             
                             <td>
                                 <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{$student->id}}">Edit</a>
-                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletestudent{{$student->id}}">Delete</a>
+                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletestudent{{$student->id}}"><i class='bx bx-trash'></i></a>
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal{{$student->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
