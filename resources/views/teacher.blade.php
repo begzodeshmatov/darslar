@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Dashboard') }}
                     <a href="/home" class="btn btn-success">Home</a>
                     <a href="/students" class="btn btn-primary">Student</a>
+                    <a href="/kitoblar" class="btn btn-primary">Books</a>
                     <button type="button" style="float:right;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Qo'shish</button>
                 </div>
 
@@ -51,7 +52,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Id</th>
                             <th scope="col">Name</th>
                             <th scope="col">Surname</th>
                             <th scope="col">Manzil</th>
