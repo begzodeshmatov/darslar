@@ -164,6 +164,15 @@ class HomeController extends Controller
         return back();
     }
 
+    public function library() {
+
+        $get = Students::all();
+
+        return view('library', [
+            'library'=>$get
+        ]);
+    }
+
     public function kitoblar() {
 
         $get = Books::all();
@@ -206,6 +215,5 @@ class HomeController extends Controller
         $get->save();
         return redirect('/kitoblar');
     }
-
   
 }

@@ -38,7 +38,10 @@ Route::get('/teacherdelete/{id}', 'HomeController@teacherdelete');
 
 // 1-kishi
 
-
+Route::get('/library', 'HomeController@teacher');
+Route::post('/librarySave', 'HomeController@librarySave');
+Route::post('/libraryEditSave/{id}', 'HomeController@libraryEditSave');
+Route::get('/librarydelete/{id}', 'HomeController@librarydelete');
 
 
 
