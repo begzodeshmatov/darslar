@@ -163,5 +163,15 @@ class HomeController extends Controller
         return back();
     }
 
+
+    public function library() {
+
+        $get = Students::all();
+
+        return view('library', [
+            'library'=>$get
+        ]);
+    }
+
   
 }
