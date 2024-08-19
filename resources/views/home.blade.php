@@ -9,6 +9,7 @@
                     <a href="/teacher" class="btn btn-danger">Teacher</a>
                     <a href="/students" class="btn btn-primary">Student</a>
                     <a href="/library" class="btn btn-primary">Library</a>
+                    <a href="/kitoblar" class="btn btn-primary">Books</a>
                     <button style="float:right;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Qo'shish</button>
                 </div>
                 <!-- Modal -->
@@ -44,7 +45,7 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Id</th>
                             <th scope="col">Name</th>
                             <th scope="col">Password</th>
                             <th scope="col">Email</th>

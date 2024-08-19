@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Students;
 use App\Teachers;
+use App\Books;
 
 class HomeController extends Controller
 {
@@ -163,7 +164,6 @@ class HomeController extends Controller
         return back();
     }
 
-
     public function library() {
 
         $get = Students::all();
@@ -173,5 +173,47 @@ class HomeController extends Controller
         ]);
     }
 
+    public function kitoblar() {
+
+        $get = Books::all();
+
+        return view('kitoblar', [
+            'kitoblar'=>$get
+        ]);
+    }
+
+    public function bookdelete($id) {
+
+        Books::where('id', $id)->delete();
+        return back();
+    }
+
+    public function booksEditSave($id, Request $request) {
+        // dd($request);
+
+        $data = [
+            'name'=>$request->name,
+            'surname'=>$request->surname,
+            'email'=>$request->email,
+            'book_name'=>$request->book_name,
+        ];
+
+        Books::where('id', $id)->update($data);
+        return back();
+    }
+
+    public function bookSave(Request $request) {
+        // dd($request);
+
+        $get = new Books();
+
+        $get->name = $request->name;
+        $get->surname = $request->surname;
+        $get->email = $request->email;
+        $get->book_name = $request->book_name;
+
+        $get->save();
+        return redirect('/kitoblar');
+    }
   
 }
