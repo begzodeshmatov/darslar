@@ -1,133 +1,154 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}
-                    <a href="/home" class="btn btn-danger">Home</a>
-                    <a href="/teacher" class="btn btn-primary">Teacher</a>
-                    <a href="/students" class="btn btn-primary">Student</a>
-                    <button style="float:right;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Qo'shish</button>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+
+<main id="main" class="main">
+
+<div class="pagetitle">
+  <h1>Kasblarga o'qitish</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/home">Asosiy</a></li>
+      <li class="breadcrumb-item active">Kasbga o'qitish</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Kasblar haqida</h5>
+          <button class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus"></i></button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
                     <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Books</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/bookSave" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label>Name</label>
-                                <input type="text" name="name" class="form-control" id="" placeholder="Ismingizni kiriting.." required>
-                            </div>
-                            <div class="mb-3">
-                                <label>Surname</label>
-                                <input type="text" name="surname" class="form-control" id="" placeholder="Familiyangizni kiriting.." required>
-                            </div>
-                            <div class="mb-3">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control" id="" placeholder="Emailingizni kiriting.." required>
-                            </div>
-                            <div class="mb-3">
-                                <label>Books</label>
-                                <input type="text" name="book_name" class="form-control" id="" placeholder="Kitob nomini kiriting.." required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Saqlash</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-                </div>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Surname</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Book name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($kitoblar as $kitob)
-                        <tr>
-                            <th scope="row">{{$kitob->id}}</th>
-                            <td>{{$kitob->name}}</td>
-                            <td>{{$kitob->surname}}</td>
-                            <td>{{$kitob->email}}</td>
-                            <td>{{$kitob->book_name}}</td>
-                            <td>
-                                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal{{$kitob->id}}">Edit</a>
-                                <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUser{{$kitob->id}}"><i class='bx bx-trash'></i></a>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal{{$kitob->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">User Edit</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="/booksEditSave/{{$kitob->id}}" method="POST">
-                                            @csrf
-                                            <div class="mb-3">
-                                                <label>Name</label>
-                                                <input type="text" name="name" value="{{$kitob->name}}" class="form-control" id="">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label>Surname</label>
-                                                <input type="text" name="surname" value="{{$kitob->surname}}" class="form-control" id="">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label>Email</label>
-                                                <input type="email" name="email" value="{{$kitob->email}}" class="form-control" id="">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label>Book name</label>
-                                                <input type="text" name="book_name" value="{{$kitob->surname}}" class="form-control" id="">
-                                            </div>
-                                            <button type="submit" class="btn btn-primary">Tahrirlash</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Kasbga o'qitish Qo'shish</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <!-- Modal -->
-
-
-                        <div class="modal fade" id="deleteUser{{$kitob->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">O'chirish</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
                             <div class="modal-body">
-                                <p> Haqiqatdan ham {{$kitob->name}} ni o'chirmoqchimisiz??</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yo'q</button>
-                                <a href="/bookdelete/{{$kitob->id}}" class="btn btn-primary">Xa</a>
-                            </div>
-                            </div>
+                                <form action="/bookSave" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label class="form-label">F.I.SH:</label>
+                                        <input type="text" class="form-control" name="name" placeholder="F.I.SH" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Manzil:</label>
+                                        <input type="text" class="form-control" name="email" placeholder="Manzil" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Kitob nomi:</label>
+                                        <input type="text" class="form-control" name="book_name" placeholder="Kitob nomi" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Telefon raqam:</label>
+                                        <input type="tel" class="form-control" name="tel_raqam" placeholder="Telefon nomer" required>
+                                    </div>
+                                    <button class="btn btn-primary">Qo'shish</button>
+                                </form>
                         </div>
-                        </div>
+                    </div>
+                </div>
+</div>
 
-                        </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-              
+          <!-- Default Table -->
+          <table class="table table-bordered table-striped table-hover">
+            <thead>
+              <tr align="center">
+                <th scope="col">№</th>
+                <th scope="col">F.I.SH.</th>
+                <th scope="col">Manzil</th>
+                <th scope="col">Kitob nomi</th>
+                <th scope="col">Tel nomer</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+               @foreach($kitoblar as $kasb)
+              <tr>
+                <th scope="row">{{$kasb->id}}</th>
+                <td>{{$kasb->name}}</td>
+                <td>{{$kasb->manzil}}</td>
+                <td>{{$kasb->book_name}}</td>
+                <td>{{$kasb->tel_raqam}}</td>
+                <td>
+                  <a  data-bs-toggle="modal" class="btn btn-primary" data-bs-target="#exampleModal{{$kasb->id}}" href="#"><i class='bx bx-pencil'></i></a>
+                  <a  data-bs-toggle="modal" class="btn btn-danger" data-bs-target="#bookdelete{{$kasb->id}}" href="#"><i class='bx bx-trash' ></i></a>
+
+  <!-- Modal -->
+
+<div class="modal fade" id="exampleModal{{$kasb->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Murojaat Edit</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form action="/booksEditSave/{{$kasb->id}}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="form-label">F.I.SH.:</label>
+                        <input type="text" class="form-control" name="name" value="{{$kasb->name}}" placeholder="Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Manzil:</label>
+                        <input type="text" class="form-control" name="email" value="{{$kasb->email}}" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Book name:</label>
+                        <input type="text" class="form-control" name="book_name" value="{{$kasb->book_name}}" placeholder="Book name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Telefon raqam:</label>
+                        <input type="tel" class="form-control" name="tel_raqam" value="{{$kasb->tel_raqam}}" placeholder="Telefon nomer" required>
+                    </div>
+                    <button class="btn btn-primary">Tahrirlash</button>
+                </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="bookdelete{{$kasb->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">O'chirish</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <p>Haqiqatdan ham {{$kasb->name}} ni o'chirmoqchimisiz</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yo'q</button>
+                  <a href="/bookdelete/{{$kasb->id}}" class="btn btn-primary">Xa</a>
+              </div>
             </div>
         </div>
+  </div>
+
+
+      @endforeach
+
+
+            </tbody>
+
+          </table>
+          <!-- End Default Table Example -->
+        </div>
+      </div>
+
     </div>
-</div>
+
+
+  </div>
+</section>
+
+</main><!-- End #main -->
+
 @endsection

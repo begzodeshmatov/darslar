@@ -292,6 +292,12 @@
                 </a>
             </li><!-- End Components Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
+                    <i class="bi bi-menu-button-wide"></i><span>Books</span>
+                </a>
+            </li>
+
 
             <li class="nav-item">
                 <a class="nav-link collapsed"href="{{ route('logout') }}"
