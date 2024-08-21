@@ -281,16 +281,13 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
+
+
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/teacher">
-                    <i class="bi bi-menu-button-wide"></i><span>Teacher</span>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
+                    <i class="bi bi-menu-button-wide"></i><span>Baza</span>
                 </a>
-            </li><!-- End Components Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/students">
-                    <i class="bi bi-menu-button-wide"></i><span>Student</span>
-                </a>
-            </li><!-- End Components Nav -->
+            </li>
 
 
             <li class="nav-item">
