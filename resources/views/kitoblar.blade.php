@@ -5,11 +5,11 @@
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Kasblarga o'qitish</h1>
+  <h1>Murojaatlar</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/home">Asosiy</a></li>
-      <li class="breadcrumb-item active">Kasbga o'qitish</li>
+      <li class="breadcrumb-item active">Murojaatlar</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -32,8 +32,12 @@
                                 <form action="/bookSave" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="mb-3">
-                                        <label class="form-label">F.I.SH:</label>
-                                        <input type="text" class="form-control" name="name" placeholder="F.I.SH" required>
+                                        <label class="form-label">Ism:</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Ism" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Familiya:</label>
+                                        <input type="text" class="form-control" name="surname" placeholder="Familiya" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Manzil:</label>
@@ -59,7 +63,8 @@
             <thead>
               <tr align="center">
                 <th scope="col">№</th>
-                <th scope="col">F.I.SH.</th>
+                <th scope="col">Ism</th>
+                <th scope="col">Familiya</th>
                 <th scope="col">Manzil</th>
                 <th scope="col">Kitob nomi</th>
                 <th scope="col">Tel nomer</th>
@@ -69,12 +74,13 @@
             <tbody>
                @foreach($kitoblar as $kasb)
               <tr>
-                <th scope="row">{{$kasb->id}}</th>
+                <th scope="row">{{$count++}}</th>
                 <td>{{$kasb->name}}</td>
-                <td>{{$kasb->manzil}}</td>
+                <td>{{$kasb->surname}}</td>
+                <td>{{$kasb->email}}</td>
                 <td>{{$kasb->book_name}}</td>
                 <td>{{$kasb->tel_raqam}}</td>
-                <td>
+                <td >
                   <a  data-bs-toggle="modal" class="btn btn-primary" data-bs-target="#exampleModal{{$kasb->id}}" href="#"><i class='bx bx-pencil'></i></a>
                   <a  data-bs-toggle="modal" class="btn btn-danger" data-bs-target="#bookdelete{{$kasb->id}}" href="#"><i class='bx bx-trash' ></i></a>
 
@@ -91,12 +97,16 @@
       <form action="/booksEditSave/{{$kasb->id}}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label class="form-label">F.I.SH.:</label>
+                        <label class="form-label">Ism:</label>
                         <input type="text" class="form-control" name="name" value="{{$kasb->name}}" placeholder="Name" required>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Familiya:</label>
+                        <input type="text" class="form-control" name="surname" value="{{$kasb->surname}}" placeholder="Familiya" required>
+                    </div>
+                    <div class="mb-3">
                         <label class="form-label">Manzil:</label>
-                        <input type="text" class="form-control" name="email" value="{{$kasb->email}}" placeholder="Email" required>
+                        <input type="text" class="form-control" name="email" value="{{$kasb->email}}" placeholder="Manzil" required>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Book name:</label>
@@ -114,7 +124,7 @@
 </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="bookdelete{{$kasb->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="bookdelete{{$kasb->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -140,6 +150,7 @@
 
           </table>
           <!-- End Default Table Example -->
+           {{ $kitoblar->links() }}
         </div>
       </div>
 

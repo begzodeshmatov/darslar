@@ -196,10 +196,12 @@ class HomeController extends Controller
 
     public function kitoblar() {
 
-        $get = Books::all();
+        $get = Books::paginate(5);
+        $count = 1;
 
         return view('kitoblar', [
-            'kitoblar'=>$get
+            'kitoblar'=>$get,
+            'count' => $count
         ]);
     }
 
