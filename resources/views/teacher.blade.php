@@ -9,6 +9,7 @@
                     <a href="/home" class="btn btn-success">Home</a>
                     <a href="/students" class="btn btn-primary">Student</a>
                     <a href="/kitoblar" class="btn btn-primary">Books</a>
+                    <a href="/library" class="btn btn-primary">Library</a>
                     <button type="button" style="float:right;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Qo'shish</button>
                 </div>
 

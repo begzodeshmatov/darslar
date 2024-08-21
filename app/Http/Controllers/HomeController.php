@@ -8,6 +8,7 @@ use App\User;
 use App\Students;
 use App\Teachers;
 use App\Books;
+use App\Library;
 
 class HomeController extends Controller
 {
@@ -164,14 +165,104 @@ class HomeController extends Controller
         return back();
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     public function library() {
 
-        $get = Students::all();
+        $get = Library::all();
 
         return view('library', [
             'library'=>$get
         ]);
     }
+    public function librarydelete($id) {
+
+        Library::where('id', $id)->delete();
+        return back();
+    }
+
+    public function libraryEditSave($id, Request $request) {
+        // dd($request);
+
+        $data = [
+            'name'=>$request->name,
+            'surname'=>$request->surname,
+            'email'=>$request->email,
+            'book_name'=>$request->book_name,
+        ];
+
+        Library::where('id', $id)->update($data);
+        return back();
+    }
+
+    public function librarySave(Request $request) {
+        // dd($request);
+
+        $get = new Library();
+
+        $get->name = $request->name;
+        $get->surname = $request->surname;
+        $get->email = $request->email;
+        $get->book_name = $request->book_name;
+
+        $get->save();
+        return redirect('/kitoblar');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function kitoblar() {
 
