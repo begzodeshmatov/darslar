@@ -80,7 +80,7 @@
                 <td>{{$kasb->email}}</td>
                 <td>{{$kasb->book_name}}</td>
                 <td>{{$kasb->tel_raqam}}</td>
-                <td >
+                <td>
                   <a  data-bs-toggle="modal" class="btn btn-primary" data-bs-target="#exampleModal{{$kasb->id}}" href="#"><i class='bx bx-pencil'></i></a>
                   <a  data-bs-toggle="modal" class="btn btn-danger" data-bs-target="#bookdelete{{$kasb->id}}" href="#"><i class='bx bx-trash' ></i></a>
 

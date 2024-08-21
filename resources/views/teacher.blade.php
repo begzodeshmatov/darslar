@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}
+                    <a href="/home" class="btn btn-success">Home</a>
+                    <a href="/students" class="btn btn-primary">Student</a>
+                    <a href="/kitoblar" class="btn btn-primary">Books</a>
+                    <a href="/library" class="btn btn-primary">Library</a>
+                    <button type="button" style="float:right;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Qo'shish</button>
+                </div>
     <main id="main" class="main">
 
         <div class="pagetitle">
