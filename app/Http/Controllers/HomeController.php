@@ -174,12 +174,35 @@ class HomeController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function kitoblar() {
 
-        $get = Books::all();
+        $get = Books::paginate(5);
+        $count = 1;
 
         return view('kitoblar', [
-            'kitoblar'=>$get
+            'kitoblar'=>$get,
+            'count' => $count
         ]);
     }
 
@@ -197,6 +220,7 @@ class HomeController extends Controller
             'surname'=>$request->surname,
             'email'=>$request->email,
             'book_name'=>$request->book_name,
+            'tel_raqam'=>$request->tel_raqam,
         ];
 
         Books::where('id', $id)->update($data);
@@ -212,6 +236,7 @@ class HomeController extends Controller
         $get->surname = $request->surname;
         $get->email = $request->email;
         $get->book_name = $request->book_name;
+        $get->tel_raqam = $request->tel_raqam;
 
         $get->save();
         return redirect('/kitoblar');

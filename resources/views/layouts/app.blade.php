@@ -49,7 +49,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="/home" class="logo d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center">
                 <img src="admin/assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">Kutubxona</span>
             </a>
@@ -284,8 +284,13 @@
 
 
             <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
                     <i class="bi bi-menu-button-wide"></i><span>Baza</span>
+=======
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
+                    <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
+>>>>>>> 96ecc55e1663d6a8c013aa6017673263e353335d
                 </a>
             </li>
 
