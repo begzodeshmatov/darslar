@@ -284,13 +284,10 @@
 
 
             <li class="nav-item">
-<<<<<<< HEAD
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
                     <i class="bi bi-menu-button-wide"></i><span>Baza</span>
-=======
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
                     <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
->>>>>>> 96ecc55e1663d6a8c013aa6017673263e353335d
                 </a>
             </li>
 
