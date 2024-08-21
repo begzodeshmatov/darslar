@@ -287,7 +287,11 @@
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
                     <i class="bi bi-menu-button-wide"></i><span>Baza</span>
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
+
                     <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
+
+                    <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>  
+
                 </a>
             </li>
 
@@ -320,7 +324,7 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://t.me/Begzod_Eshmatov/">IT Progress</a>
+            Designed by <a href="https://t.me/Begzod_Eshmatov/">Strong team</a>
         </div>
     </footer><!-- End Footer -->
 
