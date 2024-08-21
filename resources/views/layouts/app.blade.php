@@ -49,7 +49,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="/home" class="logo d-flex align-items-center">
+            <a href="/" class="logo d-flex align-items-center">
                 <img src="admin/assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">Kutubxona</span>
             </a>
@@ -281,9 +281,15 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
+
+
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/teacher">
-                    <i class="bi bi-menu-button-wide"></i><span>Teacher</span>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
+                    <i class="bi bi-menu-button-wide"></i><span>Baza</span>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
+
+                    <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
+
                 </a>
             </li><!-- End Components Nav -->
             <li class="nav-item">
@@ -295,7 +301,8 @@
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/library">
                     <i class="bi bi-menu-button-wide"></i><span>Library</span>
                 </a>
-            </li><!-- End Components Nav -->
+            </li>
+            </li>
 
 
             <li class="nav-item">
@@ -326,7 +333,7 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://t.me/Begzod_Eshmatov/">IT Progress</a>
+            Designed by <a href="https://t.me/Begzod_Eshmatov/">Strong team</a>
         </div>
     </footer><!-- End Footer -->
 

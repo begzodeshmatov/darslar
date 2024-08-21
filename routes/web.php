@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Baza;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $get =Baza::paginate(6);
+    return view('welcome', [
+        'baza'=>$get
+    ]);
 });
 
 Auth::routes();
@@ -54,6 +58,13 @@ Route::get('/bookdelete/{id}', 'HomeController@bookdelete');
 
 
 // 3-kishi
+Route::get('/baza', 'HomeController@baza');
+Route::post('/bazaSave', 'HomeController@bazaSave');
+Route::get('/bazaDelete/{id}', 'HomeController@bazaDelete');
+Route::post('/bazaEdit/{id}', 'HomeController@bazaEdit');
+
+
+
 
 
 

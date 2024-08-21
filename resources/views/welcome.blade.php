@@ -372,67 +372,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="custom-media">
-                        <a href="#"><img src="template/images/img-school-1-min.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="custom-media-body">
-                            <div class="d-flex justify-content-between pb-3">
-                                <div class="text-primary"><span class="uil uil-book-open"></span> <span>43
-                                        lesson</span></div>
-                                <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                            </div>
-                            <h3>Education Program Title</h3>
-                            <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.
-                            </p>
-                            <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
-                                <div><span class="price">$87.00</span></div>
-                                <div><a href="#">Learn More</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="custom-media">
-                        <a href="#"><img src="template/images/img-school-2-min.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="custom-media-body">
-                            <div class="d-flex justify-content-between pb-3">
-                                <div class="text-primary"><span class="uil uil-book-open"></span> <span>43
-                                        lesson</span></div>
-                                <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                            </div>
-                            <h3>Education Program Title</h3>
-                            <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.
-                            </p>
-                            <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
-                                <div><span class="price">$93.00</span></div>
-                                <div><a href="#">Learn More</a></div>
+                
+                @foreach($baza as $b)
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mt-3 mb-lg-0">
+                        <div class="custom-media">
+                            <a href="#"><img src="images/{{$b->image}}" alt="Image"
+                                    class="img-fluid" style="height:200px; width:100%;"></a>
+                            <div class="custom-media-body">
+                                <div class="d-flex justify-content-between pb-3">
+                                    <div class="text-primary"><span class="uil uil-book-open"></span> <span>43
+                                            lesson</span></div>
+                                    <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
+                                </div>
+                                <h3>{{$b->name}}</h3>
+                                <p class="mb-4">{{$b->muallif}}
+                                </p>
+                                <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
+                                    <div><span class="price">$87.00</span></div>
+                                    <div><a href="#">Learn More</a></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <div class="custom-media">
-                        <a href="#"><img src="template/images/img-school-3-min.jpg" alt="Image"
-                                class="img-fluid"></a>
-                        <div class="custom-media-body">
-                            <div class="d-flex justify-content-between pb-3">
-                                <div class="text-primary"><span class="uil uil-book-open"></span> <span>43
-                                        lesson</span></div>
-                                <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
-                            </div>
-                            <h3>Education Program Title</h3>
-                            <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.
-                            </p>
-                            <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
-                                <div><span class="price">$65.00</span></div>
-                                <div><a href="#">Learn More</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+            <!-- Sahifalash linklari -->
+            {{ $baza->links() }}
         </div>
     </div>
 
