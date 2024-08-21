@@ -8,6 +8,7 @@ use App\User;
 use App\Students;
 use App\Teachers;
 use App\Books;
+use App\Baza;
 
 class HomeController extends Controller
 {
@@ -173,12 +174,35 @@ class HomeController extends Controller
         ]);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function kitoblar() {
 
-        $get = Books::all();
+        $get = Books::paginate(5);
+        $count = 1;
 
         return view('kitoblar', [
-            'kitoblar'=>$get
+            'kitoblar'=>$get,
+            'count' => $count
         ]);
     }
 
@@ -196,6 +220,7 @@ class HomeController extends Controller
             'surname'=>$request->surname,
             'email'=>$request->email,
             'book_name'=>$request->book_name,
+            'tel_raqam'=>$request->tel_raqam,
         ];
 
         Books::where('id', $id)->update($data);
@@ -211,9 +236,67 @@ class HomeController extends Controller
         $get->surname = $request->surname;
         $get->email = $request->email;
         $get->book_name = $request->book_name;
+        $get->tel_raqam = $request->tel_raqam;
 
         $get->save();
         return redirect('/kitoblar');
     }
+    
+
+
+
+    
+
+    // baza
+    public function baza() {
+
+        $get = Baza::paginate(5);
+        $count = 1;
+
+        return view('baza', [
+            'baza'=>$get,
+            'count'=>$count
+        ]);
+    }
+    public function bazaSave(Request $request) {
+        // dd($request);
+
+        $get = new Baza();
+
+        $get->name = $request->name;
+        $get->muallif = $request->muallif;
+
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
   
+        $imageName = time().'.'.$request->image->extension();  
+   
+        $request->image->move(public_path('images'), $imageName);
+        $get->image=$imageName;
+
+        $get->save();
+        return redirect('/baza');
+    }
+    public function bazaDelete($id) {
+
+        Baza::where('id', $id)->delete();
+        return back();
+    }
+    public function bazaEdit($id, Request $request) {
+        // dd($request);
+
+        $data = [
+            'name'=>$request->name,
+            'muallif'=>$request->muallif,
+        ];
+        if ($request->hasFile('image')) {
+            $imageName = time().$request->image->getClientOriginalName();
+            $request->image->move(public_path('images'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        Baza::where('id', $id)->update($data);
+        return back();
+    }
 }
