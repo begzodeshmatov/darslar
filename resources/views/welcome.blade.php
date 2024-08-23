@@ -81,29 +81,13 @@
             <div class="container position-relative">
                 <div class="site-navigation text-center">
                     <a href="index.html" class="logo menu-absolute m-0">Kutubxona<span class="text-primary">.</span></a>
-
                     <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="has-children">
-                            <a href="#">Dropdown</a>
-                            <ul class="dropdown">
-                                <li><a href="elements.html">Elements</a></li>
-                                <li class="has-children">
-                                    <a href="#">Menu Two</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Sub Menu One</a></li>
-                                        <li><a href="#">Sub Menu Two</a></li>
-                                        <li><a href="#">Sub Menu Three</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Menu Three</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="staff.html">Our Staff</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li class="active"><a href="/">Asosiy</a></li>
+                        <li><a href="">Xodimlar</a></li>
+                        <li><a href="news.html">Yangiliklar</a></li>
+                        <li><a href="gallery.html">Rasmlar</a></li>
+                        <li><a href="about.html">Ma'lumotlar</a></li>
+                        <li><a href="contact.html">Biz bilan bog'lanish</a></li>
                     </ul>
 
                     <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Ro`yxatdan o`tish</a>
@@ -153,7 +137,7 @@
     </div> <!-- /.untree_co-hero -->
 
 
-    <div class="untree_co-section">
+    <div class="untree_co-section" id="untree_co-section">
         <div class="container">
             <div class="row justify-content-center mb-3">
                 <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
