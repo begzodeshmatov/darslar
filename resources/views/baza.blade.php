@@ -81,7 +81,7 @@
                                             <img src="images/{{ $b->image }}" alt="" width="50"
                                                 height="50">
                                         </td>
-                                        <td class="text-center">
+                                        <td>
                                             <!-- Delete tugmasi -->
                                             <a href="#" style="font-size:20px;color:black;" data-bs-toggle="modal"
                                                 data-bs-target="#deleteModalBaza{{ $b->id }}">
@@ -156,7 +156,7 @@
                                                                 </div>
 
                                                                 <button type="submit"
-                                                                    class="btn btn-primary">Saqlash</button>
+                                                                    class="btn btn-primary">Tahrirlash</button>
                                                             </form>
                                                         </div>
 
