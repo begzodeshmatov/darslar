@@ -10,6 +10,9 @@ use App\Teachers;
 use App\Books;
 use App\Library;
 use App\Baza;
+use App\Exports\ExportUser;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class HomeController extends Controller
 {
@@ -385,5 +388,9 @@ class HomeController extends Controller
 
         Baza::where('id', $id)->update($data);
         return back();
+    }
+    
+    public function export(Request $request){
+        return Excel::download(new ExportUser, 'baza.xlsx');
     }
 }

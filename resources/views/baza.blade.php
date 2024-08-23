@@ -18,6 +18,7 @@
                     <div class="card px-3 py-0">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
+                            <a href="/export" class=" btn btn-primary btn--add translate-middle-x position-absolute top-0 end-50 mt-3">Export</a>
                             <button
                                 class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x"
                                 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i

@@ -56,7 +56,8 @@
 
                     <div class="col-6 col-lg-9">
                         <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span
-                                class="d-none d-lg-inline-block">Savollaringiz bormi?</span></a>
+                                class="d-none d-lg-inline-block">Savollaringiz bormi?</span>
+                        </a>
                         <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span
                                 class="d-none d-lg-inline-block">+998(97) 260 69 09</span></a>
                         <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span
