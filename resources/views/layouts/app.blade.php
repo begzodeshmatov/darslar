@@ -291,12 +291,7 @@
                     <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
 
                 </a>
-            </li><!-- End Components Nav -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/students">
-                    <i class="bi bi-menu-button-wide"></i><span>Student</span>
-                </a>
-            </li><!-- End Components Nav -->
+            </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/library">
                     <i class="bi bi-menu-button-wide"></i><span>Library</span>
