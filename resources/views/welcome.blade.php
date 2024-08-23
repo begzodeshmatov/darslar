@@ -56,11 +56,11 @@
 
                     <div class="col-6 col-lg-9">
                         <a href="#" class="small mr-3"><span class="icon-question-circle-o mr-2"></span> <span
-                                class="d-none d-lg-inline-block">Have a questions?</span></a>
+                                class="d-none d-lg-inline-block">Savollaringiz bormi?</span></a>
                         <a href="#" class="small mr-3"><span class="icon-phone mr-2"></span> <span
-                                class="d-none d-lg-inline-block">10 20 123 456</span></a>
+                                class="d-none d-lg-inline-block">+998(97) 260 69 09</span></a>
                         <a href="#" class="small mr-3"><span class="icon-envelope mr-2"></span> <span
-                                class="d-none d-lg-inline-block">info@mydomain.com</span></a>
+                                class="d-none d-lg-inline-block">uzcoder96@gmail.com</span></a>
                     </div>
 
                     <div class="col-6 col-lg-3 text-right">
@@ -80,7 +80,7 @@
         <div class="sticky-nav js-sticky-header">
             <div class="container position-relative">
                 <div class="site-navigation text-center">
-                    <a href="index.html" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+                    <a href="index.html" class="logo menu-absolute m-0">Kutubxona<span class="text-primary">.</span></a>
 
                     <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
                         <li class="active"><a href="index.html">Home</a></li>
@@ -106,7 +106,7 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
 
-                    <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Enroll Now</a>
+                    <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Ro`yxatdan o`tish</a>
 
                     <a href="#"
                         class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
@@ -131,13 +131,12 @@
                     <div class="row justify-content-center ">
 
                         <div class="col-lg-6 text-center ">
-                            <a href="#" href="https://vimeo.com/342333493" data-fancybox data-aos="fade-up"
-                                data-aos-delay="0" class="caption mb-4 d-inline-block">Watch the video</a>
+                            <a href="#" href="https://www.google.com/search?sca_esv=8f49df3e5247a172&sxsrf=ADLYWIK4uezsljRFP-Uzahlz5KaRSp4OrA:1724310417310&q=kutubxona&tbm=vid&source=lnms&fbs=AEQNm0BGIGwLWEDSb1sf9biXUg7SagJX9HKRAVtInHuMfoF_mWlKEWuo3cVP8ds-NUlgBJdwjx5pkM7C0wS5feQOQFTZV7ugykVSiruMyS-JrysCclIAwJFoEasrIqY0zKV2FqnK1MRKdvh1g-GDjF-BOBTygumyiFiVwP_DUjmIjemy26t4AxyTiXVJcmBr0aBXtHEKQ6G8EcKJZzE0HbI1FYbms7K5nQ&sa=X&sqi=2&ved=2ahUKEwiL5J_vhIiIAxUCBxAIHbHpFiAQ0pQJegQIFxAB&biw=1366&bih=607&dpr=1#fpstate=ive&vld=cid:daa41d1d,vid:EB5C3RzPDhI,st:0" data-fancybox data-aos="fade-up"
+                                data-aos-delay="0" class="caption mb-4 d-inline-block">Videoni tomosha qiling</a>
 
-                            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Education is
-                                the Mother of Leadership</h1>
+                            <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Ilm - narsalarni inson aqli yordami bilan o`rganishlikdir.</h1>
                             <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#"
-                                    class="btn btn-secondary">Explore courses</a></p>
+                                    class="btn btn-secondary">Kurslarni o'rganing</a></p>
 
                         </div>
 
@@ -281,12 +280,12 @@
                     </ul>
 
                     <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary">Get
-                            Started</a></p>
+                        Started</a></p>
 
                 </div>
                 <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
                     <figure class="img-wrap-2">
-                        <img src="template/images/teacher-min.jpg" alt="Image" class="img-fluid">
+                        <img src="template/images/img_2.jpg" alt="Image" class="img-fluid h-50 rounded-3 rounded">
                         <div class="dotted"></div>
                     </figure>
 
