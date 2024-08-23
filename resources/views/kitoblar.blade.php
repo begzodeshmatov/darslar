@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Telefon raqam:</label>
-                                        <input type="tel" class="form-control" name="tel_raqam" placeholder="Telefon nomer" required>
+                                        <input type="number" class="form-control" name="tel_raqam" placeholder="Telefon nomer" required>
                                     </div>
                                     <button class="btn btn-primary">Qo'shish</button>
                                 </form>
