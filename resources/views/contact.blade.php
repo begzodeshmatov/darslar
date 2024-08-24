@@ -69,15 +69,13 @@
           <form action="/bookSave" method="POST">
             @csrf
             <div class="row">
-              <div class="col-4 mb-3">
-                <input type="text" class="form-control" name="name" placeholder="Your Name">
+              <div class="col-6 mb-3">
+                <input type="text" class="form-control" name="name" placeholder="F.I.O">
               </div>
-              <div class="col-4 mb-3">
-                <input type="text" class="form-control" name="surname" placeholder="Your Surname">
-              </div>
-              <div class="col-4 mb-3">
-                <input type="text" class="form-control" name="tel_raqam" placeholder="Your Number">
-              </div>
+              <div class="col-6 mb-3 input-group">
+                <span class="input-group-text border-1 bg-light" id="basic-addon1">+998</span>
+                <input type="text" class="form-control" name="tel_raqam"  placeholder="(97)2606909" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
               <div class="col-6 mb-3">
                 <input type="email" class="form-control" name="email" placeholder="Your Email">
               </div>
@@ -85,7 +83,7 @@
                 <input type="text" class="form-control" name="book_name" placeholder="Book_name">
               </div>
               <div class="col-12 mb-3">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="surname" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
 
               <div class="col-12">
