@@ -88,7 +88,7 @@
                         <li><a href="news.html">Yangiliklar</a></li>
                         <li><a href="gallery.html">Rasmlar</a></li>
                         <li><a href="about.html">Ma'lumotlar</a></li>
-                        <li><a href="contact.html">Biz bilan bog'lanish</a></li>
+                        <li><a href="/contact">Biz bilan bog'lanish</a></li>
                     </ul>
 
                     <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Qabulga yozilish</a>
@@ -116,7 +116,7 @@
                     <div class="row justify-content-center ">
 
                         <div class="col-lg-6 text-center ">
-                            <a href="https://www.google.com/search?sca_esv=8f49df3e5247a172&sxsrf=ADLYWIK4uezsljRFP-Uzahlz5KaRSp4OrA:1724310417310&q=kutubxona&tbm=vid&source=lnms&fbs=AEQNm0BGIGwLWEDSb1sf9biXUg7SagJX9HKRAVtInHuMfoF_mWlKEWuo3cVP8ds-NUlgBJdwjx5pkM7C0wS5feQOQFTZV7ugykVSiruMyS-JrysCclIAwJFoEasrIqY0zKV2FqnK1MRKdvh1g-GDjF-BOBTygumyiFiVwP_DUjmIjemy26t4AxyTiXVJcmBr0aBXtHEKQ6G8EcKJZzE0HbI1FYbms7K5nQ&sa=X&sqi=2&ved=2ahUKEwiL5J_vhIiIAxUCBxAIHbHpFiAQ0pQJegQIFxAB&biw=1366&bih=607&dpr=1#fpstate=ive&vld=cid:daa41d1d,vid:EB5C3RzPDhI,st:0"
+                            <a href="https://vimeo.com/342333493"
                                 data-fancybox data-aos="fade-up" data-aos-delay="0"
                                 class="caption mb-4 d-inline-block">Videoni tomosha qiling</a>
 

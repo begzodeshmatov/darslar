@@ -20,15 +20,15 @@
 
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="template/css/bootstrap.min.css">
+  <link rel="stylesheet" href="template/css/animate.min.css">
+  <link rel="stylesheet" href="template/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="template/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="template/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="template/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="template/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="template/css/aos.css">
+  <link rel="stylesheet" href="template/css/style.css">
 
   <title>Learner Free Bootstrap Template by Untree.co</title>
 </head>
@@ -78,7 +78,7 @@
         <div class="sticky-nav js-sticky-header">
             <div class="container position-relative">
                 <div class="site-navigation text-center">
-                    <a href="index.html" class="logo menu-absolute m-0">Kutubxona<span class="text-primary">.</span></a>
+                    <a href="/" class="logo menu-absolute m-0">Kutubxona<span class="text-primary">.</span></a>
                     <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
                         <li class="active"><a href="/">Asosiy</a></li>
                         <li><a href="">Xodimlar</a></li>
@@ -149,17 +149,17 @@
           <div class="widget">
             <h3>Gallery</h3>
             <ul class="instafeed instagram-gallery list-unstyled">
-              <li><a class="instagram-item" href="images/gal_1.jpg" data-fancybox="gal"><img src="images/gal_1.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_1.jpg" data-fancybox="gal"><img src="template/images/gal_1.jpg" alt="" width="72" height="72"></a>
               </li>
-              <li><a class="instagram-item" href="images/gal_2.jpg" data-fancybox="gal"><img src="images/gal_2.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_2.jpg" data-fancybox="gal"><img src="template/images/gal_2.jpg" alt="" width="72" height="72"></a>
               </li>
-              <li><a class="instagram-item" href="images/gal_3.jpg" data-fancybox="gal"><img src="images/gal_3.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_3.jpg" data-fancybox="gal"><img src="template/images/gal_3.jpg" alt="" width="72" height="72"></a>
               </li>
-              <li><a class="instagram-item" href="images/gal_4.jpg" data-fancybox="gal"><img src="images/gal_4.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_4.jpg" data-fancybox="gal"><img src="template/images/gal_4.jpg" alt="" width="72" height="72"></a>
               </li>
-              <li><a class="instagram-item" href="images/gal_5.jpg" data-fancybox="gal"><img src="images/gal_5.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_5.jpg" data-fancybox="gal"><img src="template/images/gal_5.jpg" alt="" width="72" height="72"></a>
               </li>
-              <li><a class="instagram-item" href="images/gal_6.jpg" data-fancybox="gal"><img src="images/gal_6.jpg" alt="" width="72" height="72"></a>
+              <li><a class="instagram-item" href="template/images/gal_6.jpg" data-fancybox="gal"><img src="template/images/gal_6.jpg" alt="" width="72" height="72"></a>
               </li>
             </ul>
           </div> <!-- /.widget -->
@@ -195,16 +195,16 @@
       </div>
     </div>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="template/js/jquery-3.4.1.min.js"></script>
+    <script src="template/js/popper.min.js"></script>
+    <script src="template/template/js/bootstrap.min.js"></script>
+    <script src="template/js/owl.carousel.min.js"></script>
+    <script src="template/js/jquery.animateNumber.min.js"></script>
+    <script src="template/js/jquery.waypoints.min.js"></script>
+    <script src="template/js/jquery.fancybox.min.js"></script>
+    <script src="template/js/jquery.sticky.js"></script>
+    <script src="template/js/aos.js"></script>
+    <script src="template/js/custom.js"></script>
 
   </body>
 
