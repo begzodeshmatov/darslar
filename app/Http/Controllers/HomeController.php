@@ -334,7 +334,7 @@ class HomeController extends Controller
         $get->tel_raqam = $request->tel_raqam;
 
         $get->save();
-        return redirect('/kitoblar');
+        return back();
     }
     public function exportBooks(Request $request){
         return Excel::download(new ExportBooks, 'Murojaatlar.xlsx');
@@ -395,5 +395,14 @@ class HomeController extends Controller
     
     public function export(Request $request){
         return Excel::download(new ExportUser, 'baza.xlsx');
+    }
+
+    public function contact() {
+
+        $get = Books::all();
+
+        return view('contact', [
+            'contact'=>$get,
+        ]);
     }
 }

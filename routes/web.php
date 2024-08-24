@@ -66,6 +66,8 @@ Route::get('/bazaDelete/{id}', 'HomeController@bazaDelete');
 Route::post('/bazaEdit/{id}', 'HomeController@bazaEdit');
 Route::get('/export','HomeController@export');
 
+Route::get('/contact', 'HomeController@contact');
+
 
 
 
