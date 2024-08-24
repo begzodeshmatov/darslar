@@ -7,12 +7,12 @@
         <div class="col-12">
           <div class="row justify-content-center ">
             <div class="col-lg-6 text-center ">
-              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Contact Us</h1>
+              <h1 class="mb-4 heading text-white" data-aos="fade-up" data-aos-delay="100">Biz bilan bog`lanish</h1>
               <div class="mb-5 text-white desc mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <p>Another free template by <a href="https://untree.co/" target="_blank" class="link-highlight">Untree.co</a>. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.</p>
+                <p>Kitob ol - spark yut <br> Mavlono:  <strong>" Begzod "</strong> qalamiga mansub. </p>
               </div>
 
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-secondary">Explore courses</a></p>
+              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="#boglanish" class="btn btn-secondary">Bog`lanish</a></p>
 
             </div>
 
@@ -29,7 +29,7 @@
 
 
 
-  <div class="untree_co-section">
+  <div class="untree_co-section" id="boglanish">
     <div class="container">
 
       <div class="row mb-5">
@@ -38,29 +38,29 @@
 
             <div class="address mt-4">
               <i class="icon-room"></i>
-              <h4 class="mb-2">Location:</h4>
-              <p>43 Raymouth Rd. Baltemoer, London 3910</p>
+              <h4 class="mb-2">Manzil:</h4>
+              <p>Jizzax viloyati, Baxmal tumani, Navbahor MFY, Do'smat qishlog'i, 173-uy. Zayniddin Muhammadiyevlar xonadoni.</p>
             </div>
 
             <div class="open-hours mt-4">
               <i class="icon-clock-o"></i>
-              <h4 class="mb-2">Open Hours:</h4>
+              <h4 class="mb-2">Ish vaqtlari: </h4>
               <p>
-                Sunday-Friday:<br>
-                11:00 AM - 2300 PM
+                Seshanba, payshanba, shanba va yakshanba
+                <br> kunlari soat 14:00 dan 18:00 gacha.
               </p>
             </div>
 
             <div class="email mt-4">
               <i class="icon-envelope"></i>
               <h4 class="mb-2">Email:</h4>
-              <p>info@Untree.co</p>
+              <p>@Reader_f_r_v_r_lib_an <br>@uzcoder96@gmail.com</p>
             </div>
 
             <div class="phone mt-4">
               <i class="icon-phone"></i>
-              <h4 class="mb-2">Call:</h4>
-              <p>+1 1234 55488 55</p>
+              <h4 class="mb-2">Tel:</h4>
+              <p>+998 88 523 97 99 <br>+998(97) 2606909</p>
             </div>
 
           </div>
@@ -77,17 +77,17 @@
                 <input type="text" class="form-control" name="tel_raqam"  placeholder="(97)2606909" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
               <div class="col-6 mb-3">
-                <input type="email" class="form-control" name="email" placeholder="Your Email">
+                <input type="email" class="form-control" name="email" placeholder="Manzilingiz">
               </div>
               <div class="col-6 mb-3">
-                <input type="text" class="form-control" name="book_name" placeholder="Book_name">
+                <input type="text" class="form-control" name="book_name" placeholder="Kitob nomi">
               </div>
-              <div class="col-12 mb-3">
-                <textarea name="surname" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+              <div class="col-12 mb-5">
+                <textarea name="surname" id="" cols="30" rows="7" class="form-control" placeholder="Xabarlar"></textarea>
               </div>
 
               <div class="col-12">
-                <input type="submit" value="Send Message" class="btn btn-primary">
+                <input type="submit" value="Yuborish" class="btn btn-primary">
               </div>
             </div>
           </form>
