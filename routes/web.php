@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Baza;
+use App\Books;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,7 @@ Route::get('/kitoblar', 'HomeController@kitoblar');
 Route::post('/bookSave', 'HomeController@bookSave');
 Route::post('/booksEditSave/{id}', 'HomeController@booksEditSave');
 Route::get('/bookdelete/{id}', 'HomeController@bookdelete');
+Route::get('/exportBooks','HomeController@exportBooks');
 
 
 

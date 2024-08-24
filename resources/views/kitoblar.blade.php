@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
     <main id="main" class="main">
@@ -19,6 +19,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
+                            <a href="/exportBooks" class=" btn btn-primary" style="position: absolute; right: 90px; margin-top: -46px;">Export</a>
                             <button
                                 class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x"
                                 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
@@ -37,14 +38,9 @@
                                             <form action="/bookSave" method="POST" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="mb-3">
-                                                    <label class="form-label">Ism:</label>
+                                                    <label class="form-label">F.I.SH:</label>
                                                     <input type="text" class="form-control" name="name"
-                                                        placeholder="Ism" required>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label class="form-label">Familiya:</label>
-                                                    <input type="text" class="form-control" name="surname"
-                                                        placeholder="Familiya" required>
+                                                        placeholder="F.I.SH" required>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label class="form-label">Manzil:</label>
@@ -61,6 +57,11 @@
                                                     <input type="number" class="form-control" name="tel_raqam"
                                                         placeholder="Telefon nomer" required>
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label class="form-label">Message:</label>
+                                                    <textarea type="text" class="form-control" name="surname"
+                                                        placeholder="Message" required></textarea>
+                                                </div>
                                                 <button class="btn btn-primary">Qo'shish</button>
                                             </form>
                                         </div>
@@ -73,11 +74,11 @@
                                 <thead>
                                     <tr align="center">
                                         <th scope="col">№</th>
-                                        <th scope="col">Ism</th>
-                                        <th scope="col">Familiya</th>
+                                        <th scope="col">F.I.SH</th>
                                         <th scope="col">Manzil</th>
                                         <th scope="col">Kitob nomi</th>
                                         <th scope="col">Tel nomer</th>
+                                        <th scope="col">Xabarlar</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -86,10 +87,10 @@
                                         <tr>
                                             <th scope="row">{{ $count++ }}</th>
                                             <td>{{ $kasb->name }}</td>
-                                            <td>{{ $kasb->surname }}</td>
                                             <td>{{ $kasb->email }}</td>
                                             <td>{{ $kasb->book_name }}</td>
                                             <td>{{ $kasb->tel_raqam }}</td>
+                                            <td>{{ $kasb->surname }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" class="btn btn-primary"
                                                     data-bs-target="#exampleModal{{ $kasb->id }}" href="#"><i
