@@ -11,6 +11,7 @@ use App\Books;
 use App\Library;
 use App\Baza;
 use App\Exports\ExportUser;
+use App\Exports\exportBooks;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -288,7 +289,7 @@ class HomeController extends Controller
 
 
 
-
+// Murojaat
     public function kitoblar() {
 
         $get = Books::paginate(5);
@@ -335,7 +336,9 @@ class HomeController extends Controller
         $get->save();
         return back();
     }
-    
+    public function exportBooks(Request $request){
+        return Excel::download(new ExportBooks, 'Murojaatlar.xlsx');
+    }
 
 
 
