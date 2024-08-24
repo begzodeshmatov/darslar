@@ -116,11 +116,14 @@
       <div class="row">
         <div class="col-lg-3 mr-auto">
           <div class="widget">
-            <h3>About Us<span class="text-primary">.</span> </h3>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h3  class="text-light fw-bold">BIZ HAQIMIZDA<span class="text-primary">.</span> </h3>
+            <p>Jizzax viloyati Baxmal tumanidagi xususiy-ijtimoiy kutubxona. <br>
+              <br>
+              Homiylar uchun: <br>
+              5614681621829716-Malikov Bolbek nomida</p>
           </div> <!-- /.widget -->
           <div class="widget">
-            <h3>Connect</h3>
+            <h3>Bog`lanish</h3>
             <ul class="list-unstyled social">
               <li><a href="#"><span class="icon-instagram"></span></a></li>
               <li><a href="#"><span class="icon-twitter"></span></a></li>
