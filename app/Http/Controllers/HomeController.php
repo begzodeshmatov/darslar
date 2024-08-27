@@ -11,6 +11,7 @@ use App\Books;
 use App\Library;
 use App\Baza;
 use App\Exports\ExportUser;
+use App\Imports\ImportBooks;
 use App\Exports\exportBooks;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -338,6 +339,12 @@ class HomeController extends Controller
     }
     public function exportBooks(Request $request){
         return Excel::download(new ExportBooks, 'Murojaatlar.xlsx');
+    }
+    
+    public function importBooks(Request $request){
+        Excel::import(new ImportBooks, 
+                      $request->file('file')->store('files'));
+        return redirect()->back();
     }
 
 

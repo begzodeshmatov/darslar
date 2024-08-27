@@ -20,6 +20,33 @@
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
                             <a href="/exportBooks" class=" btn btn-primary" style="position: absolute; right: 90px; margin-top: -46px;">Export</a>
+                            <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -46px;" data-bs-toggle="modal"
+                            data-bs-target="#bookimport">Import</a> 
+                            <!-- import modal -->
+                            <div class="modal fade" id="bookimport" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Kitoblar Qo'shish
+                                            </h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/import" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="mb-3">
+                                                    <label class="form-label">Fayl yuklang:</label>
+                                                    <input type="file" class="form-control" name="file">
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Qo'shish</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <button
                                 class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x"
                                 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
