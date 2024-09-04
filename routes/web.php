@@ -51,12 +51,13 @@ Route::get('/librarydelete/{id}', 'HomeController@librarydelete');
 
 
 // 2-kishi
-Route::get('/kitoblar', 'HomeController@kitoblar');
-Route::post('/bookSave', 'HomeController@bookSave');
-Route::post('/booksEditSave/{id}', 'HomeController@booksEditSave');
-Route::get('/bookdelete/{id}', 'HomeController@bookdelete');
-Route::get('/exportBooks','HomeController@exportBooks');
-Route::post('/import', 'HomeController@importBooks'); 
+Route::get('/kitoblar', 'BookController@kitoblar');
+Route::post('/bookSave', 'BookController@bookSave');
+Route::post('/booksEditSave/{id}', 'BookController@booksEditSave');
+Route::get('/bookdelete/{id}', 'BookController@bookdelete');
+Route::get('/exportBooks','BookController@exportBooks');
+Route::post('/import', 'BookController@importBooks'); 
+
 
 
 
