@@ -60,13 +60,24 @@ Route::get('/exportBooks','HomeController@exportBooks');
 
 
 // 3-kishi
-Route::get('/baza', 'HomeController@baza');
-Route::post('/bazaSave', 'HomeController@bazaSave');
-Route::get('/bazaDelete/{id}', 'HomeController@bazaDelete');
-Route::post('/bazaEdit/{id}', 'HomeController@bazaEdit');
-Route::get('/export','HomeController@export');
+Route::get('/baza', 'BazaController@baza');
+Route::post('/bazaSave', 'BazaController@bazaSave');
+Route::get('/bazaDelete/{id}', 'BazaController@bazaDelete');
+Route::post('/bazaEdit/{id}', 'BazaController@bazaEdit');
+Route::get('/export','BazaController@export');
+Route::post('/import','BazaController@import'); 
+Route::get('/export-pdf', 'BazaController@exportPDF');
+Route::get('/export-word','BazaController@exportWord');
 
-Route::get('/contact', 'HomeController@contact');
+
+
+Route::get('/contact', 'BazaController@contact');
+
+
+
+Route::get('test/{id}/photo/{photo_id}' , function($id,$photo_id){
+    return 'Sizning  id raqamingiz: '.$id . 'sizning photo_id raqamingiz: ' . $photo_id;
+});
 
 
 

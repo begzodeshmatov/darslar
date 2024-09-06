@@ -18,7 +18,77 @@
                     <div class="card px-3 py-0">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
-                            <a href="/export" class=" btn btn-primary btn--add translate-middle-x position-absolute top-0 end-50 mt-3">Export</a>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <form id="exportForm"  action="" method="GET">
+                                        <select id="exportSelect" class="form-select " aria-label="Default select example" onchange="submitForm()">
+                                            <option selected disabled>Export</option>
+                                            <option value="excel">Excel-export</option>
+                                            <option value="pdf">Pdf-export</option>
+                                            <option value="word">Word-export</option> <!-- Word varianti qo'shildi -->
+                                        </select>
+                                    </form>
+                                    
+                                    <script>
+                                        function submitForm() {
+                                            var select = document.getElementById('exportSelect');
+                                            var form = document.getElementById('exportForm');
+                                    
+                                            // Tanlangan variantga qarab formani yuborish uchun action URL ni sozlaymiz
+                                            if (select.value === 'excel') {
+                                                form.action = '/export';           // excel export URL manzili
+                                            } 
+                                            else if (select.value === 'pdf') {
+                                                form.action = '/export-pdf';       // Pdf export URL manzili
+                                            }
+                                            else if (select.value === 'word') {
+                                                form.action = '/export-word';       // Word export URL manzili
+                                            }
+                                    
+                                            form.submit(); // Formani yuborish
+                                        }
+                                    </script>
+        
+                                </div>
+
+                                <div class="col-6">
+                                    <a href="" class=" btn btn-primary btn--add translate-middle-x ms-5" data-bs-toggle="modal" data-bs-target="#importModal">Import</a>
+                                <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                         aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Kitoblar qo'shish</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/import" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <fieldset>
+                                                    <div class="mb-3">
+                                                        <label for="disabledTextInput" class="form-label">Kitob nomini
+                                                            kiriting</label>
+                                                        <input type="file" id="disabledTextInput" name="file"
+                                                            class="form-control" placeholder="file">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Saqlash</button>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                            
+                              
+                            {{-- import --}}
+                            
+                            
+                            
+                            
                             <button
                                 class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x"
                                 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i

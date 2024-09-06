@@ -85,7 +85,7 @@
                         <li><a href="news.html">Yangiliklar</a></li>
                         <li><a href="gallery.html">Rasmlar</a></li>
                         <li><a href="about.html">Ma'lumotlar</a></li>
-                        <li><a href="contact.html">Biz bilan bog'lanish</a></li>
+                        <li><a href="#">Biz bilan bog'lanish</a></li>
                     </ul>
 
                     <a href="#" class="btn-book btn btn-secondary btn-sm menu-absolute">Qabulga yozilish</a>
