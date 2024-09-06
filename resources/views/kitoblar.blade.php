@@ -19,7 +19,14 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
-                            <a href="/exportBooks" class=" btn btn-primary" style="position: absolute; right: 90px; margin-top: -46px;">Export</a>
+                            <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
+                                Export
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/exportBooks" class=" btn btn-primary dropdown w-100">Exel-Export</a></li>
+                            </ul>
+                            </div>
                             <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -46px;" data-bs-toggle="modal"
                             data-bs-target="#bookimport">Import</a> 
                             <!-- import modal -->
@@ -101,11 +108,11 @@
                                 <thead>
                                     <tr align="center">
                                         <th scope="col">№</th>
-                                        <th scope="col">F.I.SH</th>
-                                        <th scope="col">Manzil</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Surname</th>
+                                        <th scope="col">Email</th>
                                         <th scope="col">Kitob nomi</th>
                                         <th scope="col">Tel nomer</th>
-                                        <th scope="col">Xabarlar</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -114,10 +121,10 @@
                                         <tr>
                                             <th scope="row">{{ $count++ }}</th>
                                             <td>{{ $kasb->name }}</td>
+                                            <td>{{ $kasb->surname }}</td>
                                             <td>{{ $kasb->email }}</td>
                                             <td>{{ $kasb->book_name }}</td>
                                             <td>{{ $kasb->tel_raqam }}</td>
-                                            <td>{{ $kasb->surname }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" class="btn btn-primary"
                                                     data-bs-target="#exampleModal{{ $kasb->id }}" href="#"><i

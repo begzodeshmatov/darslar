@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Books;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,7 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(UserSeeder::class);
-        $this->call(BookSeeder::class);
         factory(User::class , 50)->create();
+        
+        $this->call(BookSeeder::class);
+        factory(Books::class , 500)->create();
     }
 }

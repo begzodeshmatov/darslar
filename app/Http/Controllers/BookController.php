@@ -5,6 +5,9 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Imports\ImportBooks;
+use App\Exports\exportBooks;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Books;
 
 class BookController extends Controller
@@ -40,7 +43,7 @@ class BookController extends Controller
 
     public function kitoblar() {
 
-        $get = Books::paginate(5);
+        $get = Books::paginate(20);
         $count = 1;
 
         return view('kitoblar', [
