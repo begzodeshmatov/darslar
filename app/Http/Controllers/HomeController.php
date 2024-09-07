@@ -9,8 +9,8 @@ use App\Students;
 use App\Teachers;
 use App\Books;
 use App\Library;
-use App\Baza;
 use App\Exports\ExportUser;
+use App\Imports\ImportBooks;
 use App\Exports\exportBooks;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ImportUser;
@@ -259,92 +259,5 @@ class HomeController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Murojaat
-    public function kitoblar() {
-
-        $get = Books::paginate(5);
-        $count = 1;
-
-        return view('kitoblar', [
-            'kitoblar'=>$get,
-            'count' => $count
-        ]);
-    }
-
-    public function bookdelete($id) {
-
-        Books::where('id', $id)->delete();
-        return back();
-    }
-
-    public function booksEditSave($id, Request $request) {
-        // dd($request);
-
-        $data = [
-            'name'=>$request->name,
-            'surname'=>$request->surname,
-            'email'=>$request->email,
-            'book_name'=>$request->book_name,
-            'tel_raqam'=>$request->tel_raqam,
-        ];
-
-        Books::where('id', $id)->update($data);
-        return back();
-    }
-
-    public function bookSave(Request $request) {
-        // dd($request);
-
-        $get = new Books();
-
-        $get->name = $request->name;
-        $get->surname = $request->surname;
-        $get->email = $request->email;
-        $get->book_name = $request->book_name;
-        $get->tel_raqam = $request->tel_raqam;
-
-        $get->save();
-        return back();
-    }
-    public function exportBooks(Request $request){
-        return Excel::download(new ExportBooks, 'Murojaatlar.xlsx');
-    }
-
-
-
-    
-
-    
+ 
 }

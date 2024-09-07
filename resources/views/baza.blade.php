@@ -20,12 +20,25 @@
                             <h5 class="card-title">Kitoblar haqida</h5>
 
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-4">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Export
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" href="#">Excel export</a></li>
+                                          <li><a class="dropdown-item" href="#">Pdf export</a></li>
+                                          <li><a class="dropdown-item" href="#">Word export</a></li>
+                                        </ul>
+                                      </div>
+                                </div>
+                                <div class="col-4">
+                                    
                                     <form id="exportForm"  action="" method="GET">
                                         <select id="exportSelect" class="form-select " aria-label="Default select example" onchange="submitForm()">
                                             <option selected disabled>Export</option>
                                             <option value="excel">Excel-export</option>
-                                            <option value="pdf">Pdf-export</option>
+                                            <option value="pdf1">Pdf-export</option>
                                             <option value="word">Word-export</option> <!-- Word varianti qo'shildi -->
                                         </select>
                                     </form>
@@ -52,7 +65,7 @@
         
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-4">
                                     <a href="" class=" btn btn-primary btn--add translate-middle-x ms-5" data-bs-toggle="modal" data-bs-target="#importModal">Import</a>
                                 <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                          aria-hidden="true">
@@ -163,6 +176,7 @@
                                                 data-bs-target="#editModalBaza{{ $b->id }}">
                                                 <i class='bx bxs-edit-alt' style='color:#050cf9;font-size:20px;'></i>
                                             </a>
+                                            <a href="/export-pdf/{{$b->id}}"><i class='bx bxs-file-pdf' style='color:#fc0202;font-size:30px;' ></i></a>
 
 
 

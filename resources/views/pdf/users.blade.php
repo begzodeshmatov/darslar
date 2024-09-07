@@ -1,32 +1,114 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>baza List</title>
+    <title>Baza List</title>
+    <style>
+        .row {
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        .col-4 {
+            width: 33%;
+            float: left;
+            text-align: center;
+        }
+        .col-6 {
+            width: 47%;
+            float: left;
+        }
+        .col-4-mygo {
+            padding: 30px 0px 0px;
+        }
+        .col-4-gerb {
+            padding-top: 15px;
+        }
+        .gerb_img {
+            width: 150px;
+            height: 100px;
+        }
+        .mygo_img {
+            width: 200px;
+            height: 50px;
+        }
+        .clear {
+            clear: both;
+        }
+        .clock {
+            text-align: right;
+        }
+        hr {
+            height: 3px;
+            color: black;
+            background: black;
+        }
+        *{
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <h1>baza List</h1>
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
+    <div class="clock" id="clock"> {{$baza ->created_at}}</div>
+    <hr>
+    <div class="container" style="   margin-bottom:30px;" >
+        <div class="row">
+            <div class="col-4 col-4-mygo">
+                <img src="images/mygo.png" class="mygo_img" alt="rasm yuq">
+            </div>
+            <div class="col-4 col-4-gerb">
+                <img src="images/gerb.png" class="gerb_img" alt="rasm yuq">
+            </div>
+            <div class="col-4">
+                <h3 style="margin-top: 25px">O'zbekiston Respublikasi Oliy ta'lim fan va innovatsiyalar vazirligi</h3>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="row">
+            <div class="col-6">
+                <h6 style="text-align: left">№ 5271-8166-daeb-a914-a9f0-5709-8475 <br>
+                    Hujjat yaratilgan sana: 2024-09-06 <br>
+                    Ariza raqami: 146403968</h6>
+            </div>
+            <div class="col-6">
+                <h6 style="text-align: right">Hujjat berilgan: ESHMATOV BEHZOD ULUG'BEK O'G'LI <br>
+                    JShShIR: 50109045440046</h6>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <h2 style="text-align: center; margin-bottom:30px">O'qish joyidan ma'lumotnoma</h2>
+        <table border="2" width="100%" cellpadding="10" cellspacing="0" style="margin-bottom: 20px">
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Muallif</th>
-                <th>Image</th>
+                <th align="left">ID</th>
+                <td>{{ $baza->id }}</td>
+            <tr>
+                <th align="left">Name</th>
+                <td>{{ $baza->name }}</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach($baza as $b)
             <tr>
-                <td>{{ $b->id }}</td>
-                <td>{{ $b->name }}</td>
-                <td>{{ $b->muallif }}</td>
+                <th align="left">Muallif</th>
+                <td>{{ $baza->muallif }}</td>
+            </tr>
+            <tr>
+                <th align="left">Image</th>
                 <td>
-                    <img src="images/{{ $b->image }}" alt="" width="50"
-                                                height="50">
+                    <img src="images/{{ $baza->image }}" alt="" width="50" height="50">
                 </td>
             </tr>
-            @endforeach
-        </tbody>
-    </table>
+        </table>
+        <h5>Ma'lumot so'ralgan joyga taqdim etish uchun berildi.</h5>
+        <br><br><br><br><br>
+        <div class="row">
+            <h5 style="float: left; width:70%;">Mazkur hujjat Vazirlar Mahkamasining 2017 yil 15 sentyabrdagi 728-son qaroriga muvofiq Yagona interaktiv davlat xizmatlari portalida shakllantirilgan elektron hujjatning nusxasi bo'lib, davlat organlari tomonidan
+                ushbu hujjatni qabul qilishni rad etishlari qat'iyan taqiqlanadi. Hujjat haqiqiyligini repo.gov.uz veb-saytida hujjatning 
+                noyob raqamini kiritib yoki mobil telefon yordamida QR- kodni skaner qilish orqali tekshirish mumkin.</h5>
+            <img src="images/qrlogo.png" style="width: 80px; height:80px; margin-left:120px;margin-top:22px;" alt="">
+        </div>
+        
+    </div>
+    
+    
+
+    <hr>
+    
 </body>
 </html>

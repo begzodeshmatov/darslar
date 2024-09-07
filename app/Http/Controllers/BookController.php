@@ -1,10 +1,13 @@
 <?php
+namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Books;
 
-class CreateBooksTable extends Migration
+class BookController extends Controller
 {
     /**
      * Run the migrations.
@@ -32,5 +35,62 @@ class CreateBooksTable extends Migration
     public function down()
     {
         Schema::dropIfExists('books');
+    }
+
+
+    public function kitoblar() {
+
+        $get = Books::paginate(5);
+        $count = 1;
+
+        return view('kitoblar', [
+            'kitoblar'=>$get,
+            'count' => $count
+        ]);
+    }
+
+    public function bookdelete($id) {
+
+        Books::where('id', $id)->delete();
+        return back();
+    }
+
+    public function booksEditSave($id, Request $request) {
+        // dd($request);
+
+        $data = [
+            'name'=>$request->name,
+            'surname'=>$request->surname,
+            'email'=>$request->email,
+            'book_name'=>$request->book_name,
+            'tel_raqam'=>$request->tel_raqam,
+        ];
+
+        Books::where('id', $id)->update($data);
+        return back();
+    }
+
+    public function bookSave(Request $request) {
+        // dd($request);
+
+        $get = new Books();
+
+        $get->name = $request->name;
+        $get->surname = $request->surname;
+        $get->email = $request->email;
+        $get->book_name = $request->book_name;
+        $get->tel_raqam = $request->tel_raqam;
+
+        $get->save();
+        return back();
+    }
+    public function exportBooks(Request $request){
+        return Excel::download(new ExportBooks, 'Murojaatlar.xlsx');
+    }
+    
+    public function importBooks(Request $request){
+        Excel::import(new ImportBooks, 
+                      $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }

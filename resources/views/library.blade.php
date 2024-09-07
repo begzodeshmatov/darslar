@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Kitoblar haqida</h5>
+                            <h5 cl ass="card-title">Kitoblar haqida</h5>
                             <button
                                 class="btn btn--add btn btn-primary position-absolute top-0 end-0 mt-3  translate-middle-x"
                                 type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
