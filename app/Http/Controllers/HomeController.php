@@ -9,7 +9,6 @@ use App\Students;
 use App\Teachers;
 use App\Books;
 use App\Library;
-use App\Baza;
 use App\Exports\ExportUser;
 use App\Imports\ImportBooks;
 use App\Exports\exportBooks;
@@ -286,8 +285,8 @@ class HomeController extends Controller
 
 
 
-    
 
+    
     // baza
     public function baza() {
 
@@ -336,17 +335,6 @@ class HomeController extends Controller
         Baza::where('id', $id)->update($data);
         return back();
     }
+
     
-    public function export(Request $request){
-        return Excel::download(new ExportUser, 'baza.xlsx');
-    }
-
-    public function contact() {
-
-        $get = Books::all();
-
-        return view('contact', [
-            'contact'=>$get,
-        ]);
-    }
 }

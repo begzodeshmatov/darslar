@@ -68,7 +68,7 @@ Route::get('/bazaDelete/{id}', 'BazaController@bazaDelete');
 Route::post('/bazaEdit/{id}', 'BazaController@bazaEdit');
 Route::get('/export','BazaController@export');
 Route::post('/import','BazaController@import'); 
-Route::get('/export-pdf', 'BazaController@exportPDF');
+Route::get('/export-pdf/{id}', 'BazaController@exportPDF');
 Route::get('/export-word','BazaController@exportWord');
 
 

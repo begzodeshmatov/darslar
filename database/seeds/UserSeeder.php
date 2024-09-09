@@ -4,7 +4,6 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-
 class UserSeeder extends Seeder
 {
     /**
@@ -21,6 +20,9 @@ class UserSeeder extends Seeder
         // ]);
 
         DB::table('users')->insert([
+            'name' => 'Sahobiddin',
+            'email' => 'sahob8560544@gmail.com',
+            'password' => Hash::make('sahob2007'),
             'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),

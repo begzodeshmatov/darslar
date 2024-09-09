@@ -49,7 +49,7 @@ class BazaController extends Controller
     }
     public function bazaEdit($id, Request $request) {
         // dd($request);
-
+ 
         $data = [
             'name'=>$request->name,
             'muallif'=>$request->muallif,
@@ -83,14 +83,24 @@ class BazaController extends Controller
 
     // pdf export
 
-    public function exportPDF()
+    // public function exportPDF()
+    // {
+    //     $baza = Baza::all();
+
+    //     $pdf = PDF::loadView('pdf.users', compact('baza'));
+    //     return $pdf->download('users.pdf');
+    // }
+    public function exportPDF($id)
     {
-        $baza = Baza::all();
+        // ID bo'yicha ma'lumotni olib kelish
+        $baza = Baza::findOrFail($id);
 
+        // PDF yaratish
         $pdf = PDF::loadView('pdf.users', compact('baza'));
-        return $pdf->download('users.pdf');
-    }
 
+        // PDFni yuklab olish uchun yuborish
+        return $pdf->download('baza_'.$baza->id.'.pdf');
+    }
 
 
     // word export
@@ -148,8 +158,8 @@ class BazaController extends Controller
         $writer->save("php://output");
     }
 
-
-
+                         
+    
     
     public function contact() {
 
@@ -161,3 +171,24 @@ class BazaController extends Controller
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
