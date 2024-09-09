@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookWordController;
 use App\Baza;
 use App\Books;
 
@@ -57,9 +58,8 @@ Route::post('/booksEditSave/{id}', 'BookController@booksEditSave');
 Route::get('/bookdelete/{id}', 'BookController@bookdelete');
 Route::get('/exportBooks','BookController@exportBooks');
 Route::post('/import', 'BookController@importBooks'); 
-
-
-
+Route::get('/exportpdf/{id}', 'BookControllerPdf@exportpdf');
+Route::get('/exportBookword', 'BookWordController@exportBookword');
 
 // 3-kishi
 Route::get('/baza', 'BazaController@baza');

@@ -19,14 +19,19 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
+
+                            <!-- Export dropdown -->
                             <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
                                 Export
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="/exportBooks" class=" btn btn-primary dropdown w-100">Exel-Export</a></li>
+                                <li><a href="/exportBookword" class=" btn btn-primary dropdown w-100">Word-Export</a></li>
                             </ul>
                             </div>
+
+                            <!-- import dropdown -->
                             <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -46px;" data-bs-toggle="modal"
                             data-bs-target="#bookimport">Import</a> 
                             <!-- import modal -->
@@ -119,7 +124,7 @@
                                 <tbody>
                                     @foreach ($kitoblar as $kasb)
                                         <tr>
-                                            <th scope="row">{{ $count++ }}</th>
+                                            <td scope="row">{{ $count++ }}</td>
                                             <td>{{ $kasb->name }}</td>
                                             <td>{{ $kasb->surname }}</td>
                                             <td>{{ $kasb->email }}</td>
@@ -132,6 +137,9 @@
                                                 <a data-bs-toggle="modal" class="btn btn-danger"
                                                     data-bs-target="#bookdelete{{ $kasb->id }}" href="#"><i
                                                         class='bx bx-trash'></i></a>
+
+                                                        <a href="/exportpdf/{{ $kasb->id }}" class="btn btn-success"><i
+                                                        class='bx bxs-file-pdf'></i></a>
 
                                                 <!-- Modal -->
 

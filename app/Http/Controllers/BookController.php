@@ -9,14 +9,16 @@ use App\Imports\ImportBooks;
 use App\Exports\exportBooks;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Books;
+use PDF; // Barryvdh\DomPDF\Facade
+
 
 class BookController extends Controller
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
+
+
+    
+
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
@@ -28,6 +30,12 @@ class BookController extends Controller
             $table->string('tel_raqam');
             $table->timestamps();
         });
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     }
 
     /**
@@ -53,7 +61,6 @@ class BookController extends Controller
     }
 
     public function bookdelete($id) {
-
         Books::where('id', $id)->delete();
         return back();
     }
@@ -96,4 +103,7 @@ class BookController extends Controller
                       $request->file('file')->store('files'));
         return redirect()->back();
     }
+
+
+    
 }
