@@ -22,4 +22,19 @@ class BookControllerPdf extends Controller
         return $pdf->download('lesson.pdf');
         // dd($kitob);
     }
+
+    public function pdfexportBooks()
+    {
+        $books = Books::all();
+       
+
+        $pdf = PDF::loadView('bookspdf', [
+            'books'=>$books,
+  
+        ]);
+        return $pdf->download('lesson.pdf');
+        // dd($kitob);
+    }
 }
+
+

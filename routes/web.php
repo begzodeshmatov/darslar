@@ -59,6 +59,7 @@ Route::get('/bookdelete/{id}', 'BookController@bookdelete');
 Route::get('/exportBooks','BookController@exportBooks');
 Route::post('/import', 'BookController@importBooks'); 
 Route::get('/exportpdf/{id}', 'BookControllerPdf@exportpdf');
+Route::get('/pdfexportBooks', 'BookControllerPdf@pdfexportBooks');
 Route::get('/exportBookword', 'BookWordController@exportBookword');
 
 // 3-kishi
