@@ -21,7 +21,7 @@
                             <h5 class="card-title">Kitoblar haqida</h5>
 
                             <!-- Export dropdown -->
-                            <div class="dropdown">
+                            <div class="dropdown" style="float: right; margin-right: 60px; margin-top: -46px;">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
                                 Export
                             </button>
@@ -113,10 +113,10 @@
                                 <thead>
                                     <tr align="center">
                                         <th scope="col">№</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Surname</th>
-                                        <th scope="col">Email</th>
+                                        <th scope="col">F.I.SH</th>
+                                        <th scope="col">Manzil</th>
                                         <th scope="col">Kitob nomi</th>
+                                        <th scope="col">Fikirlar</th>
                                         <th scope="col">Tel nomer</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -126,9 +126,9 @@
                                         <tr>
                                             <td scope="row">{{ $count++ }}</td>
                                             <td>{{ $kasb->name }}</td>
-                                            <td>{{ $kasb->surname }}</td>
                                             <td>{{ $kasb->email }}</td>
                                             <td>{{ $kasb->book_name }}</td>
+                                            <td>{{ $kasb->surname }}</td>
                                             <td>{{ $kasb->tel_raqam }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" class="btn btn-primary"
