@@ -286,7 +286,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
                     <i class="bi bi-menu-button-wide"></i><span>Baza</span>
-                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="{{ route('kitoblar')  }}">
 
                     <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
 

@@ -28,7 +28,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="/exportBooks" class=" btn btn-primary dropdown w-100">Exel-Export</a></li>
                                 <li><a href="/pdfexportBooks" class=" btn btn-primary dropdown w-100">PDF-Export</a></li>
-                                <li><a href="/exportBookword" class=" btn btn-primary dropdown w-100">Word-Export</a></li>
+                                <li><a href="{{ route('exportBookword')}}" class=" btn btn-primary dropdown w-100">Word-Export</a></li>
                             </ul>
                             </div>
 
