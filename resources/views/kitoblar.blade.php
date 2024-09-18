@@ -19,7 +19,20 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
-                            <a href="/exportBooks" class=" btn btn-primary" style="position: absolute; right: 90px; margin-top: -46px;">Export</a>
+
+                            <!-- Export dropdown -->
+                            <div class="dropdown" style="float: right; margin-right: 60px; margin-top: -46px;">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
+                                Export
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/exportBooks" class=" btn btn-primary dropdown w-100">Exel-Export</a></li>
+                                <li><a href="/pdfexportBooks" class=" btn btn-primary dropdown w-100">PDF-Export</a></li>
+                                <li><a href="/exportBookword" class=" btn btn-primary dropdown w-100">Word-Export</a></li>
+                            </ul>
+                            </div>
+
+                            <!-- import dropdown -->
                             <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -46px;" data-bs-toggle="modal"
                             data-bs-target="#bookimport">Import</a> 
                             <!-- import modal -->
@@ -104,20 +117,20 @@
                                         <th scope="col">F.I.SH</th>
                                         <th scope="col">Manzil</th>
                                         <th scope="col">Kitob nomi</th>
+                                        <th scope="col">Fikirlar</th>
                                         <th scope="col">Tel nomer</th>
-                                        <th scope="col">Xabarlar</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($kitoblar as $kasb)
                                         <tr>
-                                            <th scope="row">{{ $count++ }}</th>
+                                            <td scope="row">{{ $count++ }}</td>
                                             <td>{{ $kasb->name }}</td>
                                             <td>{{ $kasb->email }}</td>
                                             <td>{{ $kasb->book_name }}</td>
-                                            <td>{{ $kasb->tel_raqam }}</td>
                                             <td>{{ $kasb->surname }}</td>
+                                            <td>{{ $kasb->tel_raqam }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" class="btn btn-primary"
                                                     data-bs-target="#exampleModal{{ $kasb->id }}" href="#"><i
@@ -125,6 +138,9 @@
                                                 <a data-bs-toggle="modal" class="btn btn-danger"
                                                     data-bs-target="#bookdelete{{ $kasb->id }}" href="#"><i
                                                         class='bx bx-trash'></i></a>
+
+                                                        <a href="/exportpdf/{{ $kasb->id }}" class="btn btn-success"><i
+                                                        class='bx bxs-file-pdf'></i></a>
 
                                                 <!-- Modal -->
 
