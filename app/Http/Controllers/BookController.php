@@ -104,6 +104,17 @@ class BookController extends Controller
         return redirect()->back();
     }
 
+    public function bookFilter(Request $request)
+    {
+        // dd($request);
+        $tekshir = Books::whereIn('surname', ['alo','yaxshi','qoniqarsiz'])->paginate(10);
+        $count=1;
+        return view('kitoblar',[
+            'kitoblar'=>$tekshir,
+            'count'=>$count
+        ]);
+    }
+
 
     
 }

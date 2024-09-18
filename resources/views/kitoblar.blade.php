@@ -19,6 +19,19 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
+                            <!-- Select type -->
+                            <div class="dropdown" style="float: right; margin-right: 260px; margin-top: -46px;">
+                                <form action="/bookFilter" method="POST">
+                                    @csrf
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected disabled>Open this select menu</option>
+                                        <option value="alo">A`lo</option>
+                                        <option value="yaxshi">Yaxshi</option>
+                                        <option value="qoniqarsiz">Qoniqarsiz</option>
+                                    </select>
+                                    <button class="btn btn-primary">Filter</button>
+                                </form>
+                            </div>
 
                             <!-- Export dropdown -->
                             <div class="dropdown" style="float: right; margin-right: 60px; margin-top: -46px;">
@@ -123,28 +136,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($kitoblar as $kasb)
+                                    @foreach ($kitoblar as $kitob)
                                         <tr>
                                             <td scope="row">{{ $count++ }}</td>
-                                            <td>{{ $kasb->name }}</td>
-                                            <td>{{ $kasb->email }}</td>
-                                            <td>{{ $kasb->book_name }}</td>
-                                            <td>{{ $kasb->surname }}</td>
-                                            <td>{{ $kasb->tel_raqam }}</td>
+                                            <td>{{ $kitob->name }}</td>
+                                            <td>{{ $kitob->email }}</td>
+                                            <td>{{ $kitob->book_name }}</td>
+                                            <td>{{ $kitob->surname }}</td>
+                                            <td>{{ $kitob->tel_raqam }}</td>
                                             <td>
                                                 <a data-bs-toggle="modal" class="btn btn-primary"
-                                                    data-bs-target="#exampleModal{{ $kasb->id }}" href="#"><i
+                                                    data-bs-target="#exampleModal{{ $kitob->id }}" href="#"><i
                                                         class='bx bx-pencil'></i></a>
                                                 <a data-bs-toggle="modal" class="btn btn-danger"
-                                                    data-bs-target="#bookdelete{{ $kasb->id }}" href="#"><i
+                                                    data-bs-target="#bookdelete{{ $kitob->id }}" href="#"><i
                                                         class='bx bx-trash'></i></a>
 
-                                                        <a href="/exportpdf/{{ $kasb->id }}" class="btn btn-success"><i
+                                                        <a href="/exportpdf/{{ $kitob->id }}" class="btn btn-success"><i
                                                         class='bx bxs-file-pdf'></i></a>
 
                                                 <!-- Modal -->
 
-                                                <div class="modal fade" id="exampleModal{{ $kasb->id }}" tabindex="-1"
+                                                <div class="modal fade" id="exampleModal{{ $kitob->id }}" tabindex="-1"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -156,39 +169,39 @@
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <form action="/booksEditSave/{{ $kasb->id }}"
+                                                                <form action="/booksEditSave/{{ $kitob->id }}"
                                                                     method="POST">
                                                                     @csrf
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Ism:</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="name" value="{{ $kasb->name }}"
+                                                                            name="name" value="{{ $kitob->name }}"
                                                                             placeholder="Name" required>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Familiya:</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="surname" value="{{ $kasb->surname }}"
+                                                                            name="surname" value="{{ $kitob->surname }}"
                                                                             placeholder="Familiya" required>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Manzil:</label>
                                                                         <input type="text" class="form-control"
-                                                                            name="email" value="{{ $kasb->email }}"
+                                                                            name="email" value="{{ $kitob->email }}"
                                                                             placeholder="Manzil" required>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Book name:</label>
                                                                         <input type="text" class="form-control"
                                                                             name="book_name"
-                                                                            value="{{ $kasb->book_name }}"
+                                                                            value="{{ $kitob->book_name }}"
                                                                             placeholder="Book name" required>
                                                                     </div>
                                                                     <div class="mb-3">
                                                                         <label class="form-label">Telefon raqam:</label>
                                                                         <input type="tel" class="form-control"
                                                                             name="tel_raqam"
-                                                                            value="{{ $kasb->tel_raqam }}"
+                                                                            value="{{ $kitob->tel_raqam }}"
                                                                             placeholder="Telefon nomer" required>
                                                                     </div>
                                                                     <button class="btn btn-primary">Tahrirlash</button>
@@ -199,7 +212,7 @@
                                                 </div>
 
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="bookdelete{{ $kasb->id }}"
+                                                <div class="modal fade" id="bookdelete{{ $kitob->id }}"
                                                     data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                                     aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
@@ -211,13 +224,13 @@
                                                                     data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p>Haqiqatdan ham {{ $kasb->name }} ni o'chirmoqchimisiz
+                                                                <p>Haqiqatdan ham {{ $kitob->name }} ni o'chirmoqchimisiz
                                                                 </p>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Yo'q</button>
-                                                                <a href="/bookdelete/{{ $kasb->id }}"
+                                                                <a href="/bookdelete/{{ $kitob->id }}"
                                                                     class="btn btn-primary">Xa</a>
                                                             </div>
                                                         </div>

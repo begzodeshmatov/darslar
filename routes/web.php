@@ -62,6 +62,10 @@ Route::get('/exportpdf/{id}', 'BookControllerPdf@exportpdf');
 Route::get('/pdfexportBooks', 'BookControllerPdf@pdfexportBooks');
 Route::get('/exportBookword', 'BookWordController@exportBookword')->name('exportBookword');
 
+
+Route::post('/bookFilter', 'BookController@bookFilter')->name('bookFilter');
+
+
 // 3-kishi
 Route::get('/baza', 'BazaController@baza');
 Route::post('/bazaSave', 'BazaController@bazaSave');
