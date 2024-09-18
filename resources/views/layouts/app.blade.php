@@ -286,6 +286,10 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/baza">
                     <i class="bi bi-menu-button-wide"></i><span>Baza</span>
+                </a>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" href="/userfile">
+                    <i class="bi bi-menu-button-wide"></i><span>UserFile</span>
+                </a>
                 <a class="nav-link collapsed" data-bs-target="#components-nav" href="/kitoblar">
 
                     <i class="bi bi-menu-button-wide"></i><span>Murojaatlar</span>
@@ -316,7 +320,12 @@
         </ul>
 
     </aside><!-- End Sidebar-->
+
+
+
     @yield('content')
+
+    
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">

@@ -72,6 +72,19 @@ Route::get('/export-pdf/{id}', 'BazaController@exportPDF');
 Route::get('/export-word','BazaController@exportWord');
 
 
+Route::post('/bazafilter', 'BazaController@bazafilter');
+
+
+
+
+
+//UserFile uchun
+
+Route::get('/userfile', 'UserFileController@userfile');
+Route::post('/UserFileSave', 'UserFileController@UserFileSave');
+Route::get('export-word-id/{id}',[UserFileController::class , 'exportword']);
+
+
 
 Route::get('/contact', 'BazaController@contact');
 

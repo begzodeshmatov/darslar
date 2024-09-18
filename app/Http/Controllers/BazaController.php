@@ -169,6 +169,30 @@ class BazaController extends Controller
             'contact'=>$get,
         ]);
     }
+    public function bazafilter(Request $request)
+    {
+        // Formadan kelgan tanlangan qiymatlarni olish
+        $mualliflar = $request->input('muallif');
+
+        // Agar bir nechta muallif turi tanlansa, whereIn orqali filterlash
+        if ($mualliflar) {
+            $tekshir = Baza::whereIn('muallif', $mualliflar)->get();
+        } 
+        else {
+            // Agar hech narsa tanlanmasa, barcha ma'lumotlarni olish
+            $tekshir = Baza::all();
+        }
+
+        $count = 1;
+
+        return view('baza', 
+        [
+            'baza' => $tekshir,
+            'count' => $count
+        ]);
+    }
+
+
 
 }
 
