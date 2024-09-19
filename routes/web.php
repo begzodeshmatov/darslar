@@ -52,7 +52,7 @@ Route::get('/librarydelete/{id}', 'HomeController@librarydelete');
 
 
 // 2-kishi
-Route::get('/Murojaatlar', 'BookController@kitoblar')->name('kitoblar');
+Route::get('/kitoblar', 'BookController@kitoblar');
 Route::post('/bookSave', 'BookController@bookSave');
 Route::post('/booksEditSave/{id}', 'BookController@booksEditSave');
 Route::get('/bookdelete/{id}', 'BookController@bookdelete');
@@ -75,6 +75,19 @@ Route::get('/export','BazaController@export');
 Route::post('/import','BazaController@import'); 
 Route::get('/export-pdf/{id}', 'BazaController@exportPDF');
 Route::get('/export-word','BazaController@exportWord')   ;
+
+
+Route::post('/bazafilter', 'BazaController@bazafilter');
+
+
+
+
+
+//UserFile uchun
+
+Route::get('/userfile', 'UserFileController@userfile');
+Route::post('/UserFileSave', 'UserFileController@UserFileSave');
+Route::get('export-word-id/{id}',[UserFileController::class , 'exportword']);
 
 
 

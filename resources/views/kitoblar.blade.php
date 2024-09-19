@@ -19,22 +19,29 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Kitoblar haqida</h5>
+                            <!-- Search -->
+                                <div style="margin-top: -25px;">
+                                    <input type="text" id="search" class="form-control" placeholder="Search" onkeyup="qidirish()" style="position: absolute; width: 250px; margin-left: 65%; margin-top: -22px;">
+                                    <i class='bx bx-search-alt-2' style="right: 290px; margin-top: -16px; font-size: 25px; position: absolute; color: grey;"></i>
+                                </div>
+
                             <!-- Select type -->
-                            <div class="dropdown" style="float: right; margin-right: 260px; margin-top: -46px;">
-                                <form action="/bookFilter" method="POST">
+                            <div class="dropdown" style="width: 200px; margin-left: 180px; margin-top: -50px; display: flex;">
+                                <form action="/bookFilter" method="POST" style="display: flex;">
                                     @csrf
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected disabled>Open this select menu</option>
-                                        <option value="alo">A`lo</option>
+                                    <select class="form-select" name="kitoblar[]" aria-label="Default select example">
+                                        <option selected disabled>Fikrlar</option>
+                                        <option value="a`lo">A`lo</option>
                                         <option value="yaxshi">Yaxshi</option>
                                         <option value="qoniqarsiz">Qoniqarsiz</option>
                                     </select>
-                                    <button class="btn btn-primary">Filter</button>
+                                    <button class="btn btn-primary" style="margin-left: 135px; position: absolute;">Filter</button>
                                 </form>
+                                <a href="/kitoblar" class="btn btn-outline-danger" style="margin-left: 205px; position: absolute;">Hammasi</a>
                             </div>
 
                             <!-- Export dropdown -->
-                            <div class="dropdown" style="float: right; margin-right: 60px; margin-top: -46px;">
+                            <div class="dropdown" style="float: right; margin-right: 60px; margin-top: -35px;">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="">
                                 Export
                             </button>
@@ -46,7 +53,7 @@
                             </div>
 
                             <!-- import dropdown -->
-                            <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -46px;" data-bs-toggle="modal"
+                            <a href="#" class=" btn btn-primary" style="position: absolute; right: 190px; margin-top: -35px;" data-bs-toggle="modal"
                             data-bs-target="#bookimport">Import</a> 
                             <!-- import modal -->
                             <div class="modal fade" id="bookimport" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -111,9 +118,8 @@
                                                         placeholder="Telefon nomer" required>
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label class="form-label">Message:</label>
-                                                    <textarea type="text" class="form-control" name="surname"
-                                                        placeholder="Message" required></textarea>
+                                                    <label class="form-label">Hizamani baholash:</label>
+                                                    <input type="text" class="form-control" name="surname" placeholder="A`lo, yaxshi, qoniqarsiz">
                                                 </div>
                                                 <button class="btn btn-primary">Qo'shish</button>
                                             </form>
@@ -123,14 +129,14 @@
                             </div>
 
                             <!-- Default Table -->
-                            <table class="table table-bordered table-striped table-hover">
+                            <table class="table table-bordered table-striped table-hover mt-3" id="bookTable">
                                 <thead>
                                     <tr align="center">
                                         <th scope="col">№</th>
                                         <th scope="col">F.I.SH</th>
                                         <th scope="col">Manzil</th>
                                         <th scope="col">Kitob nomi</th>
-                                        <th scope="col">Fikirlar</th>
+                                        <th scope="col">Fikrlar</th>
                                         <th scope="col">Tel nomer</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -243,7 +249,7 @@
 
                             </table>
                             <!-- End Default Table Example -->
-                            {{ $kitoblar->links() }}
+                            {{-- {{ $kitoblar->links() }} --}}
                         </div>
                     </div>
 
@@ -254,4 +260,35 @@
         </section>
 
     </main><!-- End #main -->
+
+    <script>    
+        function qidirish() {
+            // Qidiruv inputini olish
+            var input = document.getElementById('search');
+            var filter = input.value.toLowerCase();                   // Harflarni kichik qilib olish
+            var table = document.getElementById('bookTable');
+            var tr = table.getElementsByTagName('tr');
+
+            // Har bir qatorni tekshirish
+            for (var i = 1; i < tr.length; i++) {
+                var tdName = tr[i].getElementsByTagName('td')[0];   // Muallif ustuni
+                var tdManzil = tr[i].getElementsByTagName('td')[1]; // Kitob nomi ustuni
+                if (tdName || tdManzil) {
+                    var muallifText = tdName.textContent || tdName.innerText;
+                    var kitobNomiText = tdManzil.textContent || tdManzil.innerText;
+
+                    // Topilsa
+                    if (muallifText.toLowerCase().indexOf(filter) > -1 || kitobNomiText.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        tr[i].style.backgroundColor = "red";
+                    } else {
+                        tr[i].style.display = "none"; 
+                        tr[i].style.backgroundColor = ""; 
+                    }
+                }       
+            }
+        }
+
+    </script>
 @endsection
+

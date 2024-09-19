@@ -51,7 +51,7 @@ class BookController extends Controller
 
     public function kitoblar() {
 
-        $get = Books::paginate(20);
+        $get = Books::paginate(10);
         $count = 1;
 
         return view('kitoblar', [
@@ -104,16 +104,30 @@ class BookController extends Controller
         return redirect()->back();
     }
 
-    public function bookFilter(Request $request)
+    public function bookfilter(Request $request)
     {
-        // dd($request);
-        $tekshir = Books::whereIn('surname', ['alo','yaxshi','qoniqarsiz'])->paginate(10);
-        $count=1;
-        return view('kitoblar',[
-            'kitoblar'=>$tekshir,
-            'count'=>$count
+        // Formadan kelgan tanlangan kitoblar
+        $kitoblar = $request->input('kitoblar'); // 'kitoblar' o'rniga to'g'ri ustun nomini qo'ying
+    
+        // Agar kitoblar mavjud bo'lsa
+        if ($kitoblar && is_array($kitoblar)) {
+            // Ustun nomini to'g'rilang
+            $tekshir = Books::whereIn('surname', $kitoblar)->paginate(10); // 'title' ustuni bo'lsa
+        } 
+        else {
+            // Hech narsa tanlanmasa, barcha ma'lumotlarni olish
+            $tekshir = Books::all();
+            
+        }
+    
+        $count = 1;
+    
+        return view('kitoblar', [
+            'kitoblar' => $tekshir,
+            'count' => $count
         ]);
     }
+    
 
 
     
