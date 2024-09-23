@@ -127,6 +127,13 @@ class BookController extends Controller
             'count' => $count
         ]);
     }
+
+    public function murojaat()
+    {
+        $get = Books::all();
+
+        return response()->json($get);
+    }
     
 
 

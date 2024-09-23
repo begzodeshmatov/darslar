@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Kitoblar haqida</h5>
+                            <h5 class="card-title">Murojaatlar haqida</h5>
                             <!-- Search -->
                                 <div style="margin-top: -25px;">
                                     <input type="text" id="search" class="form-control" placeholder="Search" onkeyup="qidirish()" style="position: absolute; width: 250px; margin-left: 65%; margin-top: -22px;">
@@ -26,7 +26,7 @@
                                 </div>
 
                             <!-- Select type -->
-                            <div class="dropdown" style="width: 200px; margin-left: 180px; margin-top: -50px; display: flex;">
+                            <div class="dropdown" style="width: 200px; margin-left: 190px; margin-top: -50px; display: flex;">
                                 <form action="/bookFilter" method="POST" style="display: flex;">
                                     @csrf
                                     <select class="form-select" name="kitoblar[]" aria-label="Default select example">
