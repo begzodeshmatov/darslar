@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Baza;
 use App\User;
+use App\Books;
 use App\Exports\ExportUser;
 use App\Exports\exportBooks;
 use Maatwebsite\Excel\Facades\Excel;
